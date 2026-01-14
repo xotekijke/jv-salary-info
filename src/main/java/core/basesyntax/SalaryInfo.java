@@ -9,6 +9,7 @@ public class SalaryInfo {
     private static final int NAME_POSITION = 1;
     private static final int HOURS_POSITION = 2;
     private static final int SALARY_POSITION = 3;
+
     public String getSalaryInfo(String[] names, String[] data, String dateFrom, String dateTo) {
         LocalDate firstDate = LocalDate.parse(dateFrom, FORMATTER);
         LocalDate lastDate = LocalDate.parse(dateTo, FORMATTER);
@@ -26,8 +27,15 @@ public class SalaryInfo {
                     }
                 }
             }
-            salaryResult.append(name).append(" - ").append(finalSalary).append(System.lineSeparator());
+            salaryResult
+                    .append(name)
+                    .append(" - ")
+                    .append(finalSalary)
+                    .append(System.lineSeparator());
         }
-        return "Report for period " + dateFrom + " - " + dateTo + System.lineSeparator() + salaryResult.toString().trim();
+        return "Report for period "
+                + dateFrom + " - " + dateTo
+                + System.lineSeparator()
+                + salaryResult.toString().trim();
     }
 }
