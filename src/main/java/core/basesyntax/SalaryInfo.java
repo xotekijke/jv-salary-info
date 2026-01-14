@@ -33,9 +33,10 @@ public class SalaryInfo {
                     .append(finalSalary)
                     .append(System.lineSeparator());
         }
-        return "Report for period "
+        String output = "Report for period "
                 + dateFrom + " - " + dateTo
                 + System.lineSeparator()
                 + salaryResult.toString().trim();
+        return output;
     }
 }
